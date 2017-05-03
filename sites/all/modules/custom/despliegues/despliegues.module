@@ -1,0 +1,237 @@
+<?php
+
+/*
+ * @author Eduardo Velasco <leva2020@gmail.com>
+ * 
+*/
+
+function despliegues_init(){
+    global $theme;
+    if($theme === 'aurora'){
+        
+    }
+}
+
+function despliegues_menu(){
+    $items = array();
+    $items['home'] = array(
+        'title' => 'Inicio',
+        'page callback' => 'home_opp',
+        'access callback' => true,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    $items['servicios'] = array(
+        'title' => 'Servicios',
+        'page callback' => 'servicios',
+        'access callback' => true,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    $items['directorio'] = array(
+        'title' => 'Directorio Corporativo',
+        'page callback' => 'directorio',
+        'access callback' => true,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    $items['notigraneles'] = array(
+        'title' => 'Notigraneles',
+        'page callback' => 'notigraneles',
+        'access callback' => true,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    $items['zona-clientes'] = array(
+        'title' => 'Zona de Clientes',
+        'page callback' => 'clientes',
+        'access callback' => true,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    $items['zona-clientes-facturas'] = array(
+        'title' => 'Zona de Clientes',
+        'page callback' => 'clientes_facturas',
+        'access callback' => true,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    $items['responsabilidad-social'] = array(
+        'title' => 'Responsabilidad Social',
+        'page callback' => 'responsabilidad_social',
+        'access callback' => true,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    $items['formula-tu-denuncia'] = array(
+        'title' => 'Formula tu denuncia',
+        'page callback' => 'formula_denuncia',
+        'access callback' => true,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+}
+
+function despliegues_theme() {
+    $hooks = array();
+    $hooks['home_opp'] = array(
+        'variables' => array('data' => array()),
+        'template' => "templates/home_opp"
+    );
+    $hooks['servicios'] = array(
+        'variables' => array('data' => array()),
+        'template' => "templates/servicios"
+    );
+    $hooks['directorio'] = array(
+        'variables' => array('data' => array()),
+        'template' => "templates/directorio"
+    );
+    $hooks['notigraneles'] = array(
+        'variables' => array('data' => array()),
+        'template' => "templates/notigraneles"
+    );
+    $hooks['clientes'] = array(
+        'variables' => array('data' => array()),
+        'template' => "templates/clientes"
+    );
+    $hooks['clientes_facturas'] = array(
+        'variables' => array('data' => array()),
+        'template' => "templates/clientes_facturas"
+    );
+    $hooks['responsabilidad_social'] = array(
+        'variables' => array('data' => array()),
+        'template' => "templates/responsabilidad_social"
+    );
+    $hooks['formula_denuncia'] = array(
+        'variables' => array('data' => array()),
+        'template' => "templates/formula_denuncia"
+    );
+    
+    return $hooks;
+}
+
+function home_opp(){
+    drupal_add_css(drupal_get_path('theme', 'aurora') . '/css/home.css');
+    $datos = obtiene_info_home();
+    $contamos = $datos->field_imgenes['und'];
+    $i = 0;
+    foreach($contamos as $con){
+        $img = node_load($con['target_id']);
+        $datos_img[$i]['titulo'] = $img->title; 
+        $datos_img[$i]['descripcion'] = $img->field_descripcion['und'][0]['value'];
+        $datos_img[$i]['imagen'] = file_create_url($img->field_imagen['und'][0]['uri']);
+        $i++;
+    }
+    //print_r($id_ing);
+    return theme('home_opp', array(
+        'somos' => $datos->field_somos['und'][0]['value'],
+        'video' => $datos->field_video['und'][0]['video_id'],
+        'noticia' => $datos->field_noticia['und'][0]['value'],
+        'noticia' => $datos->field_noticia['und'][0]['value'],
+        'contamos1' => $datos_img,
+    ));
+}
+
+function servicios(){
+    drupal_add_css(drupal_get_path('theme', 'aurora') . '/css/internas.css');
+    $datos = obtiene_info_servicios();
+    //print_r($datos);
+    $servicios = $datos->field_imgenes['und'];
+    $i = 0; 
+    foreach($servicios as $con){
+        $img = node_load($con['target_id']);
+        $datos_img[$i]['titulo'] = $img->title; 
+        $datos_img[$i]['descripcion'] = $img->field_descripcion['und'][0]['value'];
+        $datos_img[$i]['imagen'] = file_create_url($img->field_imagen['und'][0]['uri']);
+        $i++;
+    }
+    $servicios1 = $datos->field_imgenes_1['und'];
+    $i = 0;
+    foreach($servicios1 as $con){
+        $img = node_load($con['target_id']);
+        $datos_img_1[$i]['titulo'] = $img->title; 
+        $datos_img_1[$i]['descripcion'] = $img->field_descripcion['und'][0]['value'];
+        $datos_img_1[$i]['imagen'] = file_create_url($img->field_imagen['und'][0]['uri']);
+        $i++;
+    }
+    $servicios2 = $datos->field_imgenes_2['und'];
+    $i = 0;
+    foreach($servicios2 as $con){
+        $img = node_load($con['target_id']);
+        $datos_img_2[$i]['titulo'] = $img->title; 
+        $datos_img_2[$i]['descripcion'] = $img->field_descripcion['und'][0]['value'];
+        $datos_img_2[$i]['imagen'] = file_create_url($img->field_imagen['und'][0]['uri']);
+        $i++;
+    }
+    return theme('servicios', array(
+        'titulo' => $datos->title,
+        'descripcion' => $datos->field_descripcion['und'][0]['value'],
+        'servicios' => $datos_img,
+        'servicios_1' => $datos_img_1,
+        'servicios_2' => $datos_img_2,
+    ));
+}
+
+function directorio(){
+    drupal_add_css(drupal_get_path('theme', 'aurora') . '/css/internas.css');
+    $datos = obtiene_info_directorio();
+    return theme('directorio', array(
+        'funcionarios' => $datos
+    ));
+}
+
+function responsabilidad_social(){
+    drupal_add_css(drupal_get_path('theme', 'aurora') . '/css/internas.css');
+    drupal_add_css(drupal_get_path('theme', 'aurora') . '/css/nuevos-desliegues.css');
+    $datos = obtiene_info_directorio();
+    return theme('responsabilidad_social', array(
+        'funcionarios' => $datos
+    ));
+}
+
+function formula_denuncia(){
+    drupal_add_css(drupal_get_path('theme', 'aurora') . '/css/internas.css');
+    drupal_add_css(drupal_get_path('theme', 'aurora') . '/css/nuevos-desliegues.css');
+    $datos = obtiene_info_directorio();
+    return theme('formula_denuncia', array(
+        'funcionarios' => $datos
+    ));
+}
+
+function notigraneles(){
+    drupal_add_css(drupal_get_path('theme', 'aurora') . '/css/internas.css');
+    $datos = obtiene_notigraneles();
+    $num_revistas = count($datos);
+    if($num_revistas > 7)
+        $num_revistas = 7;
+    return theme('notigraneles', array(
+        'notigraneles' => $datos,
+        'num_revistas' => $num_revistas,
+    ));
+}
+
+function clientes(){
+    drupal_add_css(drupal_get_path('theme', 'aurora') . '/css/internas.css');
+    $muelles = obtiene_muelles();
+    global $user;
+    $sesion = array();
+    
+    if (user_is_logged_in()) {
+        $sesion = array(
+            'name' => $user->name,
+        );
+        $form_user = "";
+    }
+    else{
+        $form_user = "<div style='display:none'><div id='login-pop'>".drupal_render(drupal_get_form('user_login'))."</div></div>";
+    }
+    return theme('clientes', array(
+        'muelles' => $muelles,
+        'sesion' => $sesion,
+        'form' => $form_user,
+    ));
+}
+
+function clientes_facturas(){
+    drupal_add_css(drupal_get_path('theme', 'aurora') . '/css/internas.css');
+    $facturas = obtiene_facturas();
+    if (!user_is_logged_in()) {
+        drupal_goto('/zona-clientes');
+    }
+    return theme('clientes_facturas', array(
+        'facturas' => $facturas,
+    ));
+}

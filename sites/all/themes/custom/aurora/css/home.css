@@ -1,0 +1,112 @@
+body {
+	background: url(../images/bgr-apertura.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+section{
+	display: block;
+	float: left;
+}
+section a.btn-seccion{
+	border-bottom: 9px solid #ffc327;
+	color: #fff;
+	display: block;
+	font-family: 'oswald-extralight';
+	font-size: 22px;
+	margin: 15px 0;
+	text-align: right;
+	text-transform: uppercase;
+	padding: 10px 10px 20px 10px;
+	text-decoration: none;
+}
+section a.btn-seccion:hover{
+	text-decoration: underline;
+}
+section.left{
+	border-bottom: 9px solid #ffc327;
+	margin: 0 160px 40px 110px;
+	width: 296px;
+}
+section a{
+	text-decoration: none;
+}
+section h2{
+	background: #ffc327;
+	color: #232e42;
+	font-family: 'oswald-lightitalic';
+	font-size: 38px;
+	height: 60px;
+	margin: 0;
+	padding: 10px 15px;
+	text-transform: uppercase;
+}
+section.left p{
+	background: #213c68;
+	padding: 15px 10px;
+}
+section.left a{
+	background: url(../images/video-thumb.jpg) no-repeat 0 0 rgba(33,60,104,0.5);
+	border: none;
+	text-decoration: none;
+	height: 115px;
+	padding: 30px 10px 20px 150px;
+	line-height: 27px;
+}
+section.left a:hover{
+	background: url(../images/video-thumb-h.jpg) no-repeat 0 0 rgba(33,60,104,0.5);	
+}
+section.right{
+	margin: 0 0 40px;
+	width: 580px;
+}
+section.right article:first-child{
+	padding: 0 0 0 50px;
+}
+section.right article h3{
+	background: url(../images/ico-notas.png) no-repeat 0 0;
+	color: #fff;
+	font-family: 'oswald-lightitalic';
+	font-size: 22px;
+	margin: 0 0 20px;
+	padding: 4px 0 10px 50px;
+	text-transform: uppercase;
+}
+section.right article > p{
+	padding: 0 0 0 50px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    body {
+        background-color: #e7ecdc;
+        background-position: center 300px;
+        background-attachment: scroll;
+    }
+    section.left{
+    	border-bottom: 9px solid #ffc327;
+    	float: none;
+    	margin: 0 auto 40px;
+    	overflow: hidden;
+    	width: 100%;
+    }
+    section.right{
+    	float: none;
+    	margin: 0 auto 40px;
+    	width: 100%;
+    }
+    section.right article:first-child{
+    	padding: 0;
+    }
+    section.left a{
+    	border-bottom: none;
+    	float: left;
+    	margin: 15px 0 0;
+    	text-align: left;
+    	padding: 30px 10px 0 130px;
+    	width: 100%;
+    }
+
+}

@@ -1,0 +1,4 @@
+name = "Despliegues"
+description = "Despliegues OPP"
+core = "7.x"
+package = "Custom Modules"

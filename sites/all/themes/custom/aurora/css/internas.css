@@ -1,0 +1,1123 @@
+.contenido h2{
+	border: 3px solid #232e42;
+	color: #232e42;
+	font-family: 'oswald-lightitalic';
+	font-size: 38px;
+	margin: 0 auto 30px;
+	padding: 10px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 340px;
+}
+.contenido > p{
+	color: #22363f;
+	margin: 0 auto 40px;
+	width:720px;
+}
+.contenido > p::first-letter{
+	background: #ffc327;
+	color: #fff; 
+	display: block;
+	font-family: 'oswald-regular';
+    font-size: 89px;
+    font-style: italic;
+    font-weight: bold;
+    float: left;
+    line-height: 72px;
+    margin: 0 10px 0 0;
+    padding: 20px 34px;
+}
+
+/* MENU */
+
+.contenido ul{
+	background: #fff;
+	border-top: 1px solid #8c8c8c;
+	width: 1280px;
+	z-index: 100;
+}
+.contenido ul li{
+	float: left;
+	margin: 20px 170px;
+}
+.contenido ul li a{
+	color: #8c8c8c;
+	font-family: 'oswald-extralight';
+	font-size: 18px;
+	text-transform: uppercase;
+}
+.contenido ul li a:hover{
+	color: #000;
+	text-decoration: none;
+}
+.contenido ul.menu-interna.fijo{
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	position: fixed;
+	top: 0;
+}
+
+
+/* SECTION */
+.contenido section{
+	padding: 20px 0 0;
+}
+.contenido section.despacho{
+	margin: 0 0 40px;
+}
+.contenido section h2{
+	border: none;
+	border-bottom: 9px solid #232e42;
+	margin: 80px 0;
+	padding: 0 40px 10px 0;
+	text-align: right;
+	width: auto;
+}
+.contenido section article{
+	margin: 0 0 40px;
+}
+.contenido section.descarga article{
+	display: block;
+	margin: 0 0 10px;
+	position: relative;
+}
+.contenido section.descarga article figure{
+	width: 100%;
+}
+.contenido section.descarga article figure img{
+	width: 100%;
+}
+.contenido section.descarga div{
+	background: rgba(33,60,104,.4);
+	margin: 360px 0 0;
+	padding: 20px 40px 20px 810px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	z-index: 10;
+}
+.contenido section.descarga article:nth-child(3) div{
+	margin: 50px 0 0;
+	padding: 20px 810px 20px 40px;
+}
+.contenido section.descarga div h3{
+	color: #fff;
+	font-family: 'oswald-lightitalic';
+	font-size: 38px;
+	margin: 0 0 20px;
+	text-align: right;
+	text-transform: uppercase;
+}
+.contenido section.descarga div p{
+	border-top: 9px solid #fff;
+	color: #fff;	
+	padding: 30px 0 0;
+}
+.contenido section.almacenamiento article{
+	padding: 0 115px;
+}
+.contenido section.almacenamiento article figure{
+	display: inline-block;
+	margin: 0 20px;
+	vertical-align: middle;
+}
+.contenido section.almacenamiento article div{
+	display: inline-block;
+}
+.contenido section.almacenamiento article div.circulo{
+	background: #ffc327;
+	border-radius: 70px;
+	-moz-border-radius: 70px;
+	-webkit-border-radius: 70px;	
+	height: 130px;
+	margin: 0 20px;
+	padding: 20px 0 0;
+	text-align: center;
+	width: 130px;
+}
+.contenido section.almacenamiento article div.circulo h4{
+	color: #213c68;
+	font-family: 'oswald-extralight';
+	font-size: 62px;
+	line-height: 1;
+}
+.contenido section.almacenamiento article div.circulo p{
+	color: #213c68;
+	font-family: 'oswald-extralight';
+	font-size: 22px;
+}
+.contenido section.almacenamiento article div.txt-s{
+	margin: 0 20px;
+	text-align: center;
+}
+.contenido section.almacenamiento article div.txt-s h4{
+	color: #213c68;
+	font-family: 'oswald-extralight';
+	font-size: 38px;
+	line-height: 1.3;
+}
+.contenido section.almacenamiento article:nth-child(2) div.txt-s h4{
+	border-bottom: 3px solid #213c68;
+}
+.contenido section.almacenamiento article div.txt-s p{
+	color: #213c68;
+	font-family: 'oswald-extralight';
+	font-size: 22px;
+	text-transform: uppercase;
+}
+.contenido section.almacenamiento article div.txt-l{
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	width: 30%;
+}
+.contenido section.almacenamiento article div.txt-l h4{
+	border-bottom: 3px solid #213c68;
+	color: #213c68;
+	font-family: 'oswald-extralight';
+	font-size: 72px;
+	line-height: 1.3;
+	text-align: center;
+}
+.contenido section.almacenamiento article div.txt-l p{
+	color: #213c68;
+	font-family: 'oswald-extralight';
+	font-size: 22px;
+	text-transform: uppercase;
+}
+
+.contenido section.despacho article{
+	display: block;
+	margin: 0 auto 30px;
+	width: 80%;
+}
+.contenido section.despacho h3{
+	background: #213c68;
+	color: #fff;
+	font-family: 'oswald-lightitalic';
+	font-size: 38px;
+	margin-bottom: 10px;
+	padding: 15px;
+	text-align: right;
+	text-transform: uppercase;
+}
+.contenido section.despacho article div, .contenido section.servicios-personal article div {
+	background: #213c68;
+}
+.contenido section.despacho article:nth-child(2) div{
+	height: 270px;
+	padding: 50px 25px 0;
+}
+.contenido section.despacho article:nth-child(3) div{
+	height: 245px;
+}
+.contenido section.despacho article:nth-child(3) div figure{
+	display: block;
+	margin: 0 ;
+	width: 296px;
+}
+.contenido section.despacho article:nth-child(3) div figure p{
+	text-align: center;
+	width: auto;
+}
+.contenido section.despacho article:nth-child(3) div p{
+	display: block;
+	margin: 0  20px;
+	text-align: center;
+	width: 255px;
+}
+.contenido section.despacho article figure{
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	width: 100px;
+	margin: 0 15px 0 20px;
+}
+.contenido section.despacho article figure img{
+	margin: 0 0 20px;
+}
+.contenido section.despacho article figcaption h4{
+	color: #fff;
+	font-family: 'oswald-extralight';
+	font-size: 38px;
+	text-transform: uppercase;
+}
+.contenido section.despacho article figcaption p{
+	font-family: 'oswald-extralight';
+	font-size: 22px;
+	text-transform: uppercase;
+	width: auto;
+}
+.contenido section.despacho article p{
+	display: inline-block;
+	vertical-align: middle;
+	width: 180px;
+}
+.contenido section.despacho .despacho1{
+	float: left;
+	width: 296px;
+	margin: 0 20px 0 230px;
+	padding: 30px 0 0 0;
+}
+.contenido section.despacho .despacho2{
+	float: left;
+	width: 296px;
+	padding: 30px 0 0 0;
+}
+nav{
+	top:0;
+	padding: 50px 0 0;
+}
+nav .btn-cerrar{
+	top: 64px;
+}
+
+.contenido.noticias .left{
+	float: left;
+	margin: 0 0 0 180px;
+	width: 300px;
+}
+.contenido.noticias .left .bx-viewport{
+	background: transparent;
+}
+.contenido.noticias .left  ul{
+	border-top: none;
+}
+.contenido.noticias .left  ul li{
+	margin: 0;
+	padding: 0 32px;
+}
+.contenido.noticias .left  ul li figure{
+	height: 300px;
+	width: 234px;
+}
+.contenido.noticias .right{
+	float: right;
+	margin: 0 180px 0 0;
+	width: 508px;
+}
+.contenido.noticias .right h2{
+	font-size: 30px;
+	margin: 0 0 10px;
+}
+.contenido.noticias .right h3{
+	color: #213c68;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-family: 'oswald-extralight';
+	margin: 0 0 20px;
+	width: 340px;
+  	line-height: 21px;
+}
+.contenido.noticias .right h4{
+	color: #8c8c8c;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-family: 'oswald-extralight';
+	margin: 0 0 30px;
+}
+.contenido.noticias .right p{
+	color: #22363f;
+	margin: 0 0 30px;
+	width: 410px;
+}
+.contenido.noticias .right a{
+	background: #2195db;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-family: 'oswald-extralight';
+	margin: 0;
+	text-decoration: none;
+	padding: 11px 38px;
+	display: block;
+	float: right;
+}
+.contenido.noticias .right a:hover{
+	background: #8c8c8c;
+}
+.contenido.noticias section.ediciones{
+	margin: 60px 0;
+}
+.contenido.noticias section.ediciones h3{
+	border-bottom: 9px solid #8c8c8c;
+	color: #8c8c8c;
+	font-size: 30px;
+	font-family: 'oswald-lightitalic';
+	text-align: center;
+	text-transform: uppercase;
+	padding: 0 0 10px;
+	margin: 0 0 40px;
+}	
+.contenido.noticias section.ediciones p{
+	color: #8c8c8c;
+	text-align: right;
+}
+.contenido.noticias section.ediciones p a{
+	color: #2195db;
+}
+.contenido.noticias section.ediciones p a:hover{
+	color: #22363f;
+}
+.contenido.noticias section.ediciones ul{
+	border-top: none;
+	width: 1110px;
+	display: block;
+	height: 180px;
+	margin: 0 auto 	50px;
+}
+.contenido.noticias section.ediciones ul li{
+	margin: 0 33px;
+}
+.contenido.noticias section.ediciones ul li a:hover{
+	opacity: .8;
+} 
+.contenido.noticias section.ediciones ul li figcaption p{
+	color: #22363f;
+	text-align: center;
+}
+.bx-controls-direction a.bx-next:hover{
+	background-position: -48px 7px;	
+	opacity: 0.3;
+}
+.bx-controls-direction a.bx-prev:hover{
+	background-position: 10px 7px;	
+	opacity: 0.3;
+}
+.video h2{
+	border: 3px solid #232e42;
+	color: #232e42;
+	font-family: 'oswald-lightitalic';
+	font-size: 38px;
+	margin: 0 auto 30px;
+	padding: 10px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 400px;
+	font-weight: inherit;
+}
+
+.contenido section.cargos  h2{
+	text-align: left;
+	font-size: 22px;
+	border-bottom: 2px solid #232e42;
+	margin: 0;
+}
+.contenido section.cargos figure{
+	float: left;
+}
+.contenido section.cargos ul{
+	float: left;
+	width: 255px;
+	border: none;
+	background: none;
+	margin: 7px 0 0 20px;
+}
+.contenido section.cargos li{
+	width: 220px;
+	color: #213c68;
+  	font-family: 'oswald-extralight';
+  	font-size: 22px;
+  	text-transform: capitalize;
+  	margin: 0;
+}
+
+.contenido section.cargos ul li:last-child {
+	margin: 20px 0 0 0;
+	text-decoration: underline;
+}
+
+.contenido section.cargos ul li:last-child a{
+	text-transform: none;
+	color: #213c68;
+}
+.contenido section.cargos ul li:last-child a:hover{
+	opacity: .5;
+}
+
+.contenido section.cargos.presidente  h2{
+	font-size: 32px;
+	border-bottom: 9px solid #232e42;
+	margin: 40px 0 0 0;
+}
+.contenido section.cargos.presidente article{
+	background: #ffc327;
+	padding: 30px 35%;
+	margin: 0 auto;
+	overflow: hidden;
+	width: 100%
+}
+.contenido section.cargos.directivos{
+	width: 100%;
+	overflow: hidden;
+	padding: 40px 0 0;
+}
+.contenido section.cargos.directivos article h2{
+	margin: 0 0 30px 0;
+}
+.contenido section.cargos.directivos article{
+	margin: 0;
+	width: 425px;
+	float: left;
+}
+
+/*Zona de cluentes*/
+.contenido section.muelles{
+	background:#213c68;
+	overflow: hidden;
+	padding: 0 0 20px;
+}
+.contenido section.muelles h2{
+	border-bottom: 9px solid white;
+	color: white;
+	font-size: 30px;
+	margin: 20px 0 0;
+}
+.contenido section.muelles p{
+	padding: 20px 10px;
+	float: left;
+}
+.contenido section.muelles .btn-carga{
+	float: right;
+	margin: 10px 40px 0 0;
+}
+.contenido section.muelles .btn-carga p{
+	float: left;
+	padding: 10px;
+
+}
+.contenido section.muelles .btn-carga a{
+    background: #2195db;
+    color: #fff;
+    font-family: 'oswald-extralight';
+    font-size: 18px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 153px;	
+    float: right;
+}
+
+.contenido section.muelles ul{
+	border: none;
+}
+.contenido section.muelles ul.btn-muelles{
+	background: url(../images/muelle.png) no-repeat 0 52px;
+	border-bottom: 9px solid white;
+	height: 420px;
+	display: block;
+	margin: 80px 0 20px;
+}
+.contenido section.muelles ul.btn-muelles li{
+	margin: 0 1px;
+}
+.contenido section.muelles ul.btn-muelles li a{
+	background: url(../images/barco.png) no-repeat 0 0;
+	border-bottom: 9px solid white;
+	color: #fff;
+	display: block;
+	font-family: "oswald-extralight";
+	font-size: 19px;
+	padding: 28px 0 5px;
+	width: 250px;
+	cursor: pointer;
+}
+.contenido section.muelles ul.btn-muelles li a p{
+	float: none;
+	font-family: "oswald-extralight";
+	font-size: 19px;
+	padding: 0;
+}
+.contenido section.muelles ul.btn-muelles li a.no-barco{
+	background: none;
+	border-bottom: 9px solid #8c8c8c;
+	color: #8c8c8c;
+	pointer-events: none;
+}
+.contenido section.muelles ul.btn-muelles li a:hover, .contenido section.muelles ul.btn-muelles li a.active{
+	background: url(../images/barco-h.png) no-repeat 0 0;
+	border-bottom: 9px solid #ffc327;
+	color: #fff;
+}
+.contenido section.muelles .content-muelles{
+	padding: 0 10px;
+	overflow: hidden;
+}
+.contenido section.muelles .content-muelles h3{
+	color: white;
+	font-family: "oswald-extralight";
+	font-size: 22px;
+	text-transform: uppercase;
+	float: left;
+	margin: 0 15px 0 0;
+}
+.contenido section.muelles .content-muelles p{
+	padding: 0;
+	float: left;
+	margin: 0 0 15px;
+}
+
+.contenido section.muelles .content-muelles .tabla-muelle{
+	overflow: hidden;
+	width: 100%;
+}
+.contenido section.muelles .content-muelles .tabla-muelle ul{
+	overflow: hidden;
+	width: 100%;
+}
+.contenido section.muelles .content-muelles .tabla-muelle ul li{
+	margin: 0;
+	text-align: center;
+	width: 315px;
+}
+.contenido section.muelles .content-muelles .tabla-muelle ul li h4{
+	background: #2195db;
+	color: white;
+	font-family: 'opensans-regular';
+	font-size: 15px;
+	text-transform: uppercase;
+	height: 25px;
+	padding: 4px 4px 0;
+}
+.contenido section.muelles .content-muelles .tabla-muelle ul li p{
+	color: #22363f;
+	margin: 0;
+	height: 25px;
+	float: none;
+	padding: 0 4px;
+}
+/*
+.contenido section.muelles .content-muelles .tabla-muelle ul:last-child li:nth-child(1){
+	width: 260px;
+}
+.contenido section.muelles .content-muelles .tabla-muelle ul:last-child li:nth-child(2){
+	width: 200px;
+}
+.contenido section.muelles .content-muelles .tabla-muelle ul:last-child li:nth-child(3){
+	width: 200px;
+}
+.contenido section.muelles .content-muelles .tabla-muelle ul:last-child li:nth-child(4){
+	width: 320px;
+}
+.contenido section.muelles .content-muelles .tabla-muelle ul:last-child li:nth-child(5){
+	width: 280px;
+}
+*/
+
+
+
+
+.contenido section.facturacion{
+	overflow: hidden;
+}
+.contenido section.facturacion h2{
+	font-size: 30px;
+	margin: 20px 0 0;
+}
+.contenido section.facturacion div.left{
+	border: 3px solid #213c68;
+	float: left;
+	margin: 48px 0 0 216px;
+	padding: 30px 0 10px;
+	width: 509px;
+}
+.contenido section.facturacion div.left h3{
+	color: #232e42;
+	font-family: 'oswald-lightitalic';
+	font-size: 30px;
+	margin: 0 auto;
+	text-align: center;
+	text-transform: uppercase;
+}
+.contenido section.facturacion div.left h3 a{
+	color: #232e42;
+}
+.contenido section.facturacion div.left p{
+	color: #232e42;
+	margin: 0 auto 20px;
+	padding: 20px 75px 0;
+}
+.contenido section.facturacion div.left p.texto-mobile{
+	display: none;
+}
+.contenido section.facturacion div.left p + a{
+	background: #2195db;
+	color: #fff;
+	display: block;
+	font-family: 'oswald-extralight';
+	font-size: 18px;
+	margin: 0 auto 30px;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	width: 153px;
+}
+.contenido section.facturacion div.left p a{
+	color: #2195db;
+
+/*    background: #2195db;
+    color: #fff;
+    font-family: 'oswald-extralight';
+    font-size: 18px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 153px;
+    float: right;*/
+}
+.contenido section.facturacion div.left p + a + p{
+	border-top: 1px solid #ccc;
+}
+.contenido section.facturacion div.right{
+	background: #ffc327;
+	float: right;
+	margin: 158px 216px 0 0;
+	width: 296px;
+}
+.contenido section.facturacion div.right ul{
+	border-top: none;
+	width: 100%;
+}
+.contenido section.facturacion div.right ul li{
+	margin: 0 auto 10px;
+	padding: 10px;
+	width: 100%;
+}
+.contenido section.facturacion div.right ul li:first-child{
+	border-bottom: 9px solid white;
+}
+.contenido section.facturacion div.right ul li h3{
+	color: #232e42;
+	font-family: 'oswald-lightitalic';
+	font-size: 22px;
+	line-height: 26px;
+	text-transform: uppercase;
+}
+.contenido section.facturacion div.right ul li p{
+	background: url(../images/sprite-contacto.png) no-repeat 8px 0;
+	color: #232e42;
+	padding: 0 0 0 36px;
+}
+.contenido section.facturacion div.right ul li:nth-child(3) p{
+	background-position: 4px -92px;
+}
+.contenido section.facturacion div.right ul li:nth-child(4) p{
+	background-position: 0 -185px;
+}
+
+.contenido section.cliente{
+	background:#213c68;
+	overflow: hidden;
+}
+.contenido section.cliente h2{
+	border-bottom: 9px solid white;
+	color: white;
+	font-size: 30px;
+	margin: 20px 0 0;
+}
+.contenido section.cliente .anio{
+	height: 55px;
+	padding: 16px 10px;
+}
+.contenido section.cliente .anio p{
+	float: left;
+}
+.contenido section.cliente .anio ul{
+	background: transparent;
+	border-top: none;
+	float: left;
+	width: auto;
+}
+.contenido section.cliente .anio ul li{
+	margin: 4px 15px;
+}
+.contenido section.cliente .anio ul li a{
+	text-decoration: none;
+}
+.contenido section.cliente .anio ul li a:hover, .contenido section.cliente .anio ul li a.active{
+	color: white;
+}
+
+.contenido section.cliente ul.mes{
+	background: url(../images/ico-mes.png) no-repeat 205px center transparent;
+	border-bottom: 1px solid #8c8c8c;
+	height: 55px;
+	padding: 8px 250px;
+	width: 100%;
+}
+.contenido section.cliente ul.mes li{
+	margin: 10px 20px;
+}
+.contenido section.cliente ul.mes li a{
+	text-decoration: none;
+}
+.contenido section.cliente ul.mes li a:hover, .contenido section.cliente ul.mes li a.active{
+	color: white;
+}
+
+
+.contenido section.cliente ul.facturas{
+	background: transparent;
+	border-top:none;
+	padding: 10px 232px;
+	overflow: hidden;
+	width: 100%;
+}
+.contenido section.cliente ul.facturas li{
+	margin: 20px 10px;
+	min-height: 204px;
+	width: 143px;
+}
+.contenido section.cliente ul.facturas li a{
+	background: url(../images/factura.png) no-repeat 0 0;
+	display: block;
+	height: 125px;
+
+	transition: 0.5s;
+	-moz-transition: 0.5s;
+	-webkit-transition: 0.5s;
+}
+.contenido section.cliente ul.facturas li a:hover{
+	background: url(../images/factura-hover.png) no-repeat 0 0;
+
+	transition: 0.5s;
+	-moz-transition: 0.5s;
+	-webkit-transition: 0.5s;
+}
+
+.contenido section.cliente ul.facturas > p{
+	text-align: center;
+	padding: 40px 0;
+}
+.contenido section.cliente ul.facturas + p{
+	float: right;
+	margin: 20px;
+}
+.contenido section.cliente ul.facturas + p a{
+	color: #2195db;
+	text-decoration: none;
+}
+.contenido section.cliente ul.facturas + p a:hover{
+	opacity: .5;
+}
+
+#user-login{
+	background: white;
+	border: 3px solid #213c68;
+	margin: 0 auto;
+    padding: 40px 70px 30px;
+    width: 500px;
+}
+#user-login .form-item{
+	margin: 0 0 30px;
+}
+#user-login label{
+	color: #213c68;
+    text-transform: uppercase;
+    font-family: 'oswald-light';
+    margin: 0 0 10px;
+    font-size: 22px;
+}
+#user-login input.form-text{
+	height: 30px;
+    margin: 0 0 10px;
+    width: 355px;
+}
+#user-login div.description{
+	color: #232e42;
+	font-family: 'opensans-regular';
+}
+#user-login .form-actions{
+	margin: 30px 0 0;
+}
+#user-login .form-actions .form-submit{
+	background: #2195db;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-family: 'oswald-extralight';
+    font-size: 18px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 153px;
+    border: none;
+}
+#user-login .form-actions .form-submit:hover{
+	background: #999;
+}
+#cboxContent #cboxClose{
+    right: 130px;
+}
+
+#alerta-error-pais, #alerta-error-ciudad{
+	font-size: 12px;
+	border: 1px solid red;
+	padding: 5px;
+	background: #F2AAAA;
+	color: red;
+}
+
+footer{
+	position: relative;
+}
+
+@media screen and (max-width: 768px) {
+	.contenido ul{
+		display: none;
+	}
+	.contenido h2{
+		font-size: 30px;
+		width: 100%;
+	}
+	.contenido p{
+		width: 100%;
+	}
+	.contenido > p::first-letter{
+		font-size: 67px;
+		padding: 30px 25px;
+	}
+	.contenido section{
+		padding: 0;
+		width: 100%;
+	}
+	.contenido section h2{
+		margin: 0 0 40px;
+		padding: 0 0 10px;
+	}
+	.contenido section.descarga div{
+		background: none;
+		position: static;
+		margin: 20px 0;
+		padding: 0;
+	}
+	.contenido section.descarga div h3{
+		border-bottom: 9px solid #213c68;
+		color: #213c68;
+		font-size: 30px;
+		padding: 0 0 10px;
+	}
+	.contenido section.descarga div p{
+		border-top: none;
+		color: #213c68;
+		padding: 0;
+	}
+	.contenido section.descarga article:nth-child(3) div{
+		margin: 20px 0;
+		padding: 0;
+	}
+	.contenido section.almacenamiento article{
+		padding: 0;
+		margin: 0 auto 40px;
+		width: 290px;
+	}
+	.contenido section.almacenamiento article figure{
+		display: none;
+	}
+	.contenido section.almacenamiento article div.circulo{
+		margin: 0;
+	}
+	.contenido section.almacenamiento article div.txt-s{
+		margin: 0 0 0 20px;
+	}
+	.contenido section.almacenamiento article div.txt-s p{
+		font-size: 18px;
+	}
+	.contenido section.almacenamiento article div.txt-s h4{
+		font-size: 30px;
+	}
+	.contenido section.almacenamiento article:nth-child(2) div.txt-s h4{
+		font-size: 30px;
+	}
+	.contenido section.almacenamiento article div.txt-l{
+		width: 100%;
+	}
+	.contenido section.almacenamiento article div.txt-l h4{
+		font-size: 60px;
+	}
+	.contenido section.despacho{
+		margin: 0;
+	}
+	.contenido section.despacho article{
+		margin: 0 auto 20px;
+		width: 100%;
+	}
+	.contenido section.despacho h3{
+		font-size: 28px;
+		padding: 15px 10px;
+	}
+	.contenido section.despacho article figure{
+		margin: 0 auto 20px;
+		width: 100%;
+	}
+	.contenido section.despacho article figure img{
+		margin: 0 auto;
+	}
+	.contenido section.despacho article p{
+		margin: 0 0 20px;
+		width: 100%;
+	}
+	.contenido section.despacho article:nth-child(2) div{
+		height: auto;
+		float: none;
+		margin: 0 auto;
+		padding: 30px 10px;
+		width: 100%;
+	}
+	.contenido section.despacho article:nth-child(3) div{
+		height: auto;
+		float: none;
+		margin: 0 auto;
+		padding: 30px 5px;
+		width: 100%;
+	}
+	.contenido section.despacho article:nth-child(3) div p{
+		margin: 0 auto;
+		width: 100%;
+	}
+	.contenido section.despacho article:nth-child(3) div figure{
+		margin: 0 auto 20px;
+		width: 100%;
+	}
+
+	.contenido section.muelles{
+		padding: 0 0 10px;
+	}
+	.contenido section.muelles h2{
+		font-size: 26px;
+		padding: 10px;
+		text-align: center;
+	}
+	.contenido section.muelles ul.btn-muelles{
+		background: none;
+		height: auto;
+		padding: 0 10px;
+		width: 100%;
+	}
+	.contenido section.muelles ul.btn-muelles li{
+		float: none;
+		margin: 0 0 60px;
+	}
+	.contenido section.muelles ul.btn-muelles li a{
+		width: 100%;
+	}
+	.contenido section.muelles .content-muelles p{
+		width: auto;
+	}
+	.contenido section.muelles .content-muelles .tabla-muelle ul{
+		display: block;
+	}
+	.contenido section.muelles .content-muelles .tabla-muelle ul li{
+		width: 100% !important;
+	}
+	.contenido section.muelles .content-muelles .tabla-muelle ul li h4{
+		height: auto;
+		line-height: 1.2;
+		padding: 5px;
+	}
+	.contenido section.muelles .content-muelles .tabla-muelle ul li p{
+		height: auto;
+		line-height: 1.2;
+		padding: 5px;
+	}
+
+	.contenido section.facturacion div.left{
+		float: none;
+		margin: 50px 0;
+		width: 100%;
+	}
+	.contenido section.facturacion div.left p{
+		padding: 20px 18% 0;
+	}
+	.contenido section.facturacion div.left p:nth-child(2){
+		display: none;
+	}
+	.contenido section.facturacion div.left p.texto-mobile{
+		background: url(../images/computador.png) no-repeat bottom center;
+		display: block;
+		padding: 20px 18% 100px;
+	}
+	.contenido section.facturacion div.right{
+		float: none;
+		margin: 50px 0;
+		overflow: hidden;
+		width: 100%;
+	}
+	.contenido section.facturacion div.right ul{
+		display: block;
+	}
+
+
+	.contenido.noticias .left{
+		float: none;
+		margin: 0 auto 40px;
+		width: 100%;
+	}
+	.contenido.noticias .left ul{
+		display: block;
+	}
+	.contenido.noticias .right{
+		float: none;
+		margin: 0 auto;
+		width: 100%;
+	}
+	.contenido.noticias .right h3{
+		width: 100%;
+	}
+	.contenido.noticias .right p{
+		width: 100%;
+	}
+	.contenido.noticias .right a{
+		display: none;
+	}
+	.contenido.noticias section.ediciones ul{
+		height: auto;
+		margin: 0 auto 10px;
+		overflow: hidden;
+		text-align: center;
+		width: 100%;
+	}
+	.contenido.noticias section.ediciones ul li{
+		display: inline-block;
+		float: none;
+		margin: 0 9px 20px;
+	}
+	.contenido.noticias section.ediciones p{
+		text-align: left;
+	}
+
+	.contenido section.cargos.presidente article{
+		padding: 10px 10px 20px;
+	}
+	.contenido section.cargos.presidente h2{
+		text-align: center;
+	}
+	.contenido section.cargos figure{
+		float: none;
+		margin: 0 auto 10px;
+		width: 100px;
+	}
+	.contenido section.cargos ul{
+		display: block;
+		margin: 0;
+		width: 100%;
+	}
+	.contenido section.cargos ul li{
+		text-align: center;
+		width: 100%;
+	}
+	.contenido section.cargos.directivos article{
+		margin: 0 0 40px;
+		width: 100%;
+	}
+	.contenido section.cargos.directivos article h2{
+		text-align: center;
+	}
+
+
+}

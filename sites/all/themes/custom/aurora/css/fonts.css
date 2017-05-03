@@ -1,0 +1,60 @@
+@font-face {
+	font-family: 'oswald-regular';
+	src: url('fonts/oswald-regular-webfont.woff') format('woff'), url('fonts/oswald-regular-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'oswald-lightitalic';
+	src: url('fonts/oswald-lightitalic-webfont.woff') format('woff'), url('fonts/oswald-lightitalic-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'oswald-extralight';
+	src: url('fonts/oswald-extralight-webfont.woff') format('woff'), url('fonts/oswald-extralight-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'opensans-semibold';
+	src: url('fonts/opensans-semibold-webfont.woff') format('woff'), url('fonts/opensans-semibold-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'opensans-regular';
+	src: url('fonts/opensans-regular-webfont.woff') format('woff'), url('fonts/opensans-regular-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'opensans-light';
+	src: url('fonts/opensans-light-webfont.woff') format('woff'), url('fonts/opensans-light-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'opensans-italic';
+	src: url('fonts/opensans-italic-webfont.woff') format('woff'), url('fonts/opensans-italic-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'opensans-extrabold';
+	src: url('fonts/opensans-extrabold-webfont.woff') format('woff'), url('fonts/opensans-extrabold-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'lanenar_webfont';
+	src: url('fonts/lanenar_-webfont.woff') format('woff'), url('fonts/lanenar_-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'fanwood-italic';
+	src: url('fonts/fanwood-italic-webfont.woff') format('woff'), url('fonts/fanwood-italic-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

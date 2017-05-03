@@ -1,0 +1,123 @@
+.bx-wrapper{
+	position: relative;
+	width: 100%;
+}
+.bxslider li{
+	/*height: 203px;*/
+	padding: 40px 20px 60px;
+}
+.bxslider li figure{
+	float: left;
+}
+.bxslider li div.dato{
+	border-bottom: 3px solid #fff;
+	float: left;
+	margin: 0 15px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+.bxslider li div.dato h4{
+	color: #22363f;
+	font-family: 'oswald-extralight';
+	font-size: 38px;
+}
+.bxslider li div.dato p{
+	font-size: 20px;
+	width: 100%;
+}
+.bxslider li p{
+	color: #22363f;
+	float: left;
+	font-family: 'oswald-extralight';
+	font-size: 19px;
+	line-height: 24px;
+	padding: 0;
+	width: 120px;
+}
+.bxslider li .despacho-car p{
+	width: 160px;
+}
+.bxslider li .despacho-car .dato{
+	margin: 0 20px;
+}
+.bx-pager{
+	position:absolute;
+	bottom: 10px;
+	text-align: center;
+	width: 100%;
+}	
+	.bx-pager .bx-pager-item{
+		display: inline-block;
+	}
+		.bx-pager .bx-pager-item a{
+			display: block;
+			width: 15px;
+			height: 15px;
+			background: #fff;
+			text-indent: -9999px;
+			margin: 5px;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			-ms-border-radius: 10px;
+			-o-border-radius: 10px;
+			border-radius: 10px;
+			box-shadow: inset 1px 1px 5px rgba(0,0,0,0.4);
+		}
+			.bx-pager .bx-pager-item a.active{
+				background: #4c0559;
+			}
+	.bx-controls-direction a{
+		display: block;
+		width: 45px;
+		height: 45px;
+		position: absolute;
+		bottom: 50%;
+		text-indent: -9999px;
+		background: url(../images/arrows.png) no-repeat 10px 7px;
+	}
+	.bx-controls-direction a.bx-next{
+		right: -20px;
+		background-position: -48px 7px;
+	}
+	.bx-controls-direction a.bx-next:hover{
+		background-position: -48px -65px;
+	}
+	.bx-controls-direction a.bx-prev{
+		left: -20px;
+	}
+	.bx-controls-direction a.bx-prev:hover{
+		background-position: 10px -65px;
+	}
+	img.portrait{
+		display: none !important;
+	}
+
+.bx-viewport{
+	background: #ffc327;
+}
+
+@media screen and (max-width: 768px) {
+	.bxslider li{
+		padding: 40px 20px;
+	}
+	.bxslider li p{
+		float: none;
+		margin: 20px auto 0;
+		text-align: center;
+		width: 130px;
+	}
+	.bxslider li .container-datos{
+		display: block;
+		margin: 0 auto;
+		overflow: hidden;
+		width: 240px;
+	}
+	.bxslider li .container-datos:nth-child(2) .dato{
+		float: none;
+		margin: 20px auto 0;
+		width: 130px;
+	}
+	.bx-controls-direction a{
+		bottom: 50%;
+	}
+}

@@ -1,0 +1,138 @@
+.resp-social h2{
+	margin: 0 auto 40px;
+	max-width: 600px;
+	width: 100%
+}
+.resp-social p{
+	margin: 0 auto 40px;
+	max-width: 700px;
+	width: 100%;
+}
+.resp-social p::first-letter{
+	background: #ffc327;
+	color: #fff; 
+	display: block;
+	font-family: 'oswald-regular';
+    font-size: 89px;
+    font-style: italic;
+    font-weight: bold;
+    float: left;
+    line-height: 72px;
+    margin: 0 10px 0 0;
+    padding: 20px 34px;
+
+}
+.contenido section.servicios-personal article div{
+	overflow: hidden;
+	padding: 40px;
+}
+.contenido section.servicios-personal article div a{
+	float: left;
+	display: block;
+	width: 33%;
+	text-align: center;
+}
+.contenido section.servicios-personal article div a img{
+	margin: 0 0 20px 0;
+}
+.contenido section.servicios-personal article div a:hover{
+	opacity: .5;
+}
+.formulario{
+	max-width: 700px;
+	width: 100%;
+}
+.formulario h2{
+	margin: 0 auto 40px;
+	max-width: 600px;
+	width: 100%
+}
+.formulario > p{
+	margin: 0 auto 60px;
+	max-width: 600px;
+	width: 100%;
+}
+
+.formulario section{
+	border-top: 1px solid #ccc;
+	margin: 0 auto;
+	max-width: 600px;
+	width: 100%;
+}
+.formulario section form{
+	font-family: 'opensans-regular';
+	margin: 0 auto;
+	max-width: 500px;
+	width: 100%;
+}
+.formulario section form p{
+	color: #22363f;
+	margin: 40px 0;
+}
+.formulario section form p.txt-adjuntar{
+	margin: 40px 0 20px;
+}
+.formulario section form label{
+	color: #22363f;
+	display: block;
+	font-family: 'oswald-lightitalic';
+	font-size: 20px;
+	margin: 0 0 10px;
+	line-height: 28px;
+	text-transform: uppercase;
+}
+.formulario section form input[type="text"]{
+	border: 2px solid #ccc;
+	color: #22363f;
+	font-family: 'opensans-regular';
+	font-size: 16px;
+	margin: 0 0 40px;
+	padding: 10px;
+	width: 100%;
+}
+.formulario section form input[type="radio"]{
+	margin: 0 0 40px;
+	width: 20px;
+}
+.formulario section form input[type="submit"]{
+	background: #2195db;
+	border: none;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-family: 'oswald-extralight';
+    font-size: 18px;
+    margin: 30px auto;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 153px;
+}
+.formulario section form input[type="submit"]:hover{
+	background: #999;
+}
+.formulario section form input[type="file"]{
+	font-size: 16px;
+    margin: 0 auto 40px;
+}
+.formulario section form textarea{
+	border: 2px solid #ccc;
+	font-family: 'opensans-regular';
+	font-size: 16px;
+	min-height: 120px;
+	padding: 20px;
+	max-width: 500px;
+	width: 100%;
+}
+
+
+
+@media screen and (max-width: 768px) {
+	.formulario section form p.txt-adjuntar{
+		display: none;
+	}
+	.formulario section form input[type="file"]{
+		display: none;
+	}
+}

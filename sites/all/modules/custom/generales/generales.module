@@ -1,0 +1,384 @@
+<?php
+
+/*
+ * @author Eduardo Velasco <leva2020@gmail.com>
+ * 
+*/
+
+function generales_init(){
+    global $theme;
+    if($theme === 'aurora'){
+        drupal_add_css(drupal_get_path('theme', 'aurora') . '/css/reset.css');
+        drupal_add_css(drupal_get_path('theme', 'aurora') . '/css/fonts.css');
+        drupal_add_css(drupal_get_path('theme', 'aurora') . '/css/bx-slider.css');
+        drupal_add_css(drupal_get_path('theme', 'aurora') . '/css/globales.css');
+        drupal_add_css(drupal_get_path('theme', 'aurora') . '/css/colorbox.css');
+        drupal_add_js(drupal_get_path('theme', 'aurora') . '/js/jquery-2.1.0.min.js');
+        drupal_add_js(drupal_get_path('theme', 'aurora') . '/js/jquery.easing.1.3.js');
+        drupal_add_js(drupal_get_path('theme', 'aurora') . '/js/opp-script.js');
+        drupal_add_js(drupal_get_path('theme', 'aurora') . '/js/jquery.bxslider.min.js');
+        drupal_add_js(drupal_get_path('theme', 'aurora') . '/js/jquery.colorbox.js');
+    }
+}
+
+function generales_menu(){
+    $items = array();
+    $items['admin/muelles'] = array(
+        'title' => 'Editar muelles',
+        'page callback' => 'editar_muelles_1',
+        'access callback' => true,
+        //'access arguments' => array('administrator video_subtitles module'),
+    );
+    $items['admin/muelles/muelles-1'] = array(
+        'title' => 'Editar muelle 1',
+        'page callback' => 'editar_muelles_1',
+        'access callback' => true,
+        //'access arguments' => array('administrator video_subtitles module'),
+    );
+    $items['admin/muelles/muelles-2'] = array(
+        'title' => 'Editar muelle 2',
+        'page callback' => 'editar_muelles_1',
+        'access callback' => true,
+        //'access arguments' => array('administrator video_subtitles module'),
+    );
+    return $items;
+}
+
+function editar_muelles_1(){
+    drupal_goto('/node/3/edit');
+}
+/**
+ * Implement hook theme
+ */
+function generales_theme() {
+    $hooks = array();
+    $hooks['header_opp'] = array(
+        'variables' => array('data' => array()),
+        'template' => "templates/header_opp"
+    );
+    $hooks['footer_opp'] = array(
+        'variables' => array('data' => array()),
+        'template' => "templates/footer_opp"
+    );
+    return $hooks;
+}
+
+/**
+ * Implement hook info
+ */
+function generales_block_info() {
+    $blocks['header_opp'] = array(
+        'info' => t('Header OPP'),
+    );
+    $blocks['footer_opp'] = array(
+        'info' => t('Footer OPP'),
+    );
+    return $blocks;
+}
+
+/**
+ * Implement hook view
+ */
+function generales_block_view($delta = '') {
+    $block = array();
+    switch ($delta) {
+        case 'header_opp':
+            $block['content'] = theme('header_opp', array('data' => header_opp()));
+            break;
+        case 'footer_opp':
+            $block['content'] = theme('footer_opp', array('data' => footer_opp()));
+            break;
+    }
+    return $block;
+}
+
+function header_opp(){
+    $menu = array(
+        'menu' => '',//menu_load_links('menu-menu-principal'),
+    );
+    return $menu;
+}
+
+function footer_opp(){
+    $datos = '';
+    return $datos;    
+}
+
+function obtiene_info_home(){
+    $home = db_select('node','n')
+            ->condition('type', 'home', '=')
+            ->range(0, 1)
+            ->fields('n')
+            ->execute();
+    $home = $home->fetchAssoc();
+    $info_home = node_load($home['nid']);
+    return $info_home;
+}
+
+function obtiene_info_servicios(){
+    $home = db_select('node','n')
+            ->condition('type', 'servicios', '=')
+            ->range(0, 1)
+            ->fields('n')
+            ->execute();
+    $home = $home->fetchAssoc();
+    $info_home = node_load($home['nid']);
+    return $info_home;
+}
+
+function obtiene_info_directorio(){
+    $home = db_select('node','n')
+            ->condition('type', 'funcionario', '=')
+            //->range(0, 1)
+            ->fields('n')
+            ->execute();
+    while ($info = $home->fetchAssoc()){
+        $info_home['funcionarios'][] = node_load($info['nid']);
+        $info_home['cargos'] = taxonomy_get_tree(4);
+    }
+    $i = 0;
+    foreach($info_home['funcionarios'] as $fun){
+        $funcionarios[$i]['nombre'] = $fun->title;
+        $funcionarios[$i]['correo'] = $fun->field_correo['und'][0]['value'];
+        $funcionarios[$i]['cargo'] = $fun->field_cargo['und'][0]['tid'];
+        $i++;
+    }
+    $fun_real = array();
+    $j = 0;
+    foreach($info_home['cargos'] as $ca){
+        $tid = $ca->tid;
+        foreach($funcionarios as $fu){
+            if((int)$tid == (int)$fu['cargo']){
+                $fun_real[$j] = $fu;
+                $fun_real[$j]['nom_cargo'] = $ca->name;
+            }
+        }
+        $j++;
+    }
+    return $fun_real;
+}
+
+function obtiene_muelles(){
+    $muelles = array();
+    $muelle = db_select('node','n')
+            ->condition('type', 'muelle', '=')
+            ->fields('n')
+            ->orderBy('created', 'ASC')
+            ->execute();
+    while ($info = $muelle->fetchAssoc()):
+        $info_muelle[] = node_load($info['nid']);
+    endwhile;
+    return $info_muelle;
+}
+
+function obtiene_facturas(){
+    $info_documento = array();
+    $documento = db_select('node','n')
+            ->condition('type', 'documentos', '=')
+            ->fields('n')
+            ->orderBy('created', 'ASC')
+            ->execute();
+    while ($info = $documento->fetchAssoc()):
+        $info_documento[] = node_load($info['nid']);
+    endwhile;
+    $i = 0;
+    foreach($info_documento as $docs){
+        $anios[] = $docs->field_a_o['und'][0]['tid'];
+        $documentos[$docs->field_a_o['und'][0]['tid']][$docs->field_mes['und'][0]['tid']][$i]['titulo'] = $docs->title;
+        $documentos[$docs->field_a_o['und'][0]['tid']][$docs->field_mes['und'][0]['tid']][$i]['descripcion'] = $docs->field_descripcion['und'][0]['value'];
+        $documentos[$docs->field_a_o['und'][0]['tid']][$docs->field_mes['und'][0]['tid']][$i]['documento'] = file_create_url($docs->field_documento['und'][0]['uri']);
+        $i++;
+    }
+    return $facturas = array(
+        'anios' => taxonomy_get_tree(2),
+        'meses' => taxonomy_get_tree(3),
+        'documentos' => $documentos,
+    );
+}
+
+function obtiene_notigraneles(){
+    $notigraneles = array();
+    $notigranel = db_select('node','n')
+            ->condition('type', 'notigraneles', '=')
+            ->fields('n')
+            ->orderBy('created', 'DESC')
+            ->execute();
+    $i = 0;
+    while ($info = $notigranel->fetchAssoc()):
+        $info_notigranel = node_load($info['nid']);
+        $notigraneles[$i]['titulo'] = $info_notigranel->title;
+        $notigraneles[$i]['descripcion'] = $info_notigranel->field_descripcion['und'][0]['value'];
+        $notigraneles[$i]['portadas'] = $info_notigranel->field_portadas['und'];
+        $notigraneles[$i]['documento'] = file_create_url($info_notigranel->field_documento['und'][0]['uri']);
+        $notigraneles[$i]['fecha'] = $info_notigranel->field_fecha['und'][0]['value'];
+        $i++;
+    endwhile;
+    
+    
+    return $notigraneles;
+}
+
+function obtiene_style_img($style, $uri){
+    $img = theme_image_style(
+        array(
+            'style_name' => $style,
+            'path' => $uri,
+            'attributes' => array(
+            'class' => 'servicio-img'
+                ),
+            'width' => NULL,
+            'height' => NULL,
+            )
+        );
+    return $img;
+}
+
+function form_formulario_contacto_form($form, &$form_state){
+    $form['pais'] = array(
+        '#type' => 'textfield',
+        '#size' => 60,
+        '#maxlength' => 128,
+        //'#required' => TRUE,
+        '#attributes' =>array(
+                //'placeholder' => '*PAÍS:',
+            ),
+        '#prefix' => '<p>Por favor indique la localización donde se está presentando la situación reportada:</p><div id="alerta-error-pais"></div>',
+        '#title' => t('*PAÍS:'),
+    );
+    $form['ciudad'] = array(
+        '#type' => 'textfield',
+        '#size' => 60,
+        '#maxlength' => 128,
+        //'#required' => TRUE,
+        '#attributes' =>array(
+                //'placeholder' => '*CIUDAD:',
+            ),
+        '#prefix' => '<div id="alerta-error-ciudad"></div>',
+        '#title' => t('*CIUDAD:'),
+    );
+    $active = array(0 => t('No'), 1 => t('Si'));
+    $form['labora'] = array(
+        '#type' => 'radios',
+        '#default_value' => isset($node->active) ? $node->active : 1,
+        '#options' => $active,
+        '#title' => '¿USTED LABORA EN LA COMPAÑÍA?:',
+    );
+    $form['comentario'] = array(
+        '#type' => 'textarea',
+        '#size' => 60,
+        '#maxlength' => 128,
+        '#attributes' =>array(
+                //'placeholder' => t('QUIENES SON LAS PERSONAS INVOLUCRADAS EN ESTA SITUACIÓN'),
+            ),
+        //'#prefix' => '<div id="alerta-error-comentario"></div>',
+        '#title' => 'QUIENES SON LAS PERSONAS INVOLUCRADAS EN ESTA SITUACIÓN',
+    );
+    $form['file'] = array(
+        '#type' => 'file',
+        '#title_display' => 'invisible',
+        '#size' => 22,
+        '#attributes' =>array(
+                //'placeholder' => t('*Narre en detalle la situación que quiere reportar.'),
+            ),
+        '#prefix' => '<p class="txt-adjuntar">Si usted cuenta con pruebas especificas que puedan ayudarnos a revisar esta situación por favor adjúntelas.</p>',
+    );
+    $form['narracion'] = array(
+        '#type' => 'textarea',
+        '#size' => 60,
+        '#maxlength' => 128,
+        '#attributes' =>array(
+                //'placeholder' => t('NARRE EN DETALLE LA SITUACIÓN QUE QUIERE REPORTAR.'),
+            ),
+        '#prefix' => '<div id="alerta-error-narracion"></div>',
+        '#title' => 'NARRE EN DETALLE LA SITUACIÓN QUE QUIERE REPORTAR.',
+    );
+    $form['nombre_contacto'] = array(
+        '#type' => 'textfield',
+        '#size' => 60,
+        '#maxlength' => 128,
+        '#attributes' =>array(
+                //'placeholder' => t('NOMBRE Y APELLIDO:'),
+            ),
+        '#prefix' => '<p>Si desea que lo contactemos para ampliar información sobre su reporte, por favor diligencie la siguiente información:</p>',
+        '#title' => 'NOMBRE Y APELLIDO:',
+    );
+    $form['telefono'] = array(
+        '#type' => 'textfield',
+        '#size' => 60,
+        '#maxlength' => 128,
+        '#attributes' =>array(
+                //'placeholder' => t('TELÉFONO:'),
+            ),
+        //'#prefix' => '<div id="alerta-error-correo"></div>',
+        '#title' => 'TELÉFONO:',
+    );
+    $form['correo_electronico'] = array(
+        '#type' => 'textfield',
+        '#size' => 60,
+        '#maxlength' => 128,
+        '#attributes' =>array(
+                //'placeholder' => t('E-MAIL:'),
+            ),
+        '#prefix' => '<div id="alerta-error-correo"></div>',
+        '#title' => 'E-MAIL:',
+    );
+    $form['medio_com'] = array(
+        '#type' => 'textarea',
+        '#size' => 60,
+        '#maxlength' => 128,
+        '#attributes' =>array(
+                //'placeholder' => t('¿CUÁL ES EL MEJOR MOMENTO PARA COMUNICARNOS CON USTED Y AMPLIAR LA INFORMACIÓN?'),
+            ),
+        //'#prefix' => '<div id="alerta-error-comentario"></div>',
+        '#title' => '¿CUÁL ES EL MEJOR MOMENTO PARA COMUNICARNOS CON USTED Y AMPLIAR LA INFORMACIÓN?',
+    );
+    $form['#validate'][] = 'validar_correo_enviar';
+    $form['submit_button'] = array(
+        '#type' => 'submit',
+        '#value' => t('ENVIAR DENUNCIA')
+    );
+    return $form;
+}
+
+function validar_correo_enviar($form, &$form_state){
+    if (!($_POST['pais'])):
+        form_set_error('pais', 'Debe ingresar un país.');
+        drupal_add_js('jQuery("#alerta-error-pais").html("Debe ingresar un país");window.location.href = "/formula-tu-denuncia#alerta-error-pais"',array('type' => 'inline', 'scope' => 'footer'));
+        
+    elseif (!($_POST['ciudad'])):
+        form_set_error('ciudad', 'Debe ingresar una ciudad.');
+        drupal_add_js('jQuery("#alerta-error-ciudad").html("Debe ingresar una ciudad");window.location.href = "/formula-tu-denuncia#alerta-error-ciudad"',array('type' => 'inline', 'scope' => 'footer'));
+    elseif (!($_POST['narracion'])):
+        form_set_error('narracion', 'Debe ingresar una narración.');
+        drupal_add_js('jQuery("#alerta-error-narracion").html("Debe ingresar una narración");window.location.href = "/formula-tu-denuncia#alerta-error-narracion"',array('type' => 'inline', 'scope' => 'footer'));
+    elseif (!valid_email_address($_POST['correo_electronico'])):
+        drupal_add_js('jQuery("#alerta-error-correo").html("Debe ingresar un correo electronico valido.");;window.location.href = "/formula-tu-denuncia#alerta-error-correo"',array('type' => 'inline', 'scope' => 'footer'));
+        form_set_error('correo_electronico', 'Debe ingresar un correo electronico valido.');
+    endif;
+}
+
+function form_formulario_contacto_form_submit($form, &$form_state){
+    $valid_email = 'leva2020@gmail.com';
+    $nombre = $form_state['values']['nombre_contacto'];
+    $comentario = $form_state['values']['comentario'];
+    $mail_user = $form_state['values']['correo_electronico'];
+    $file = '';
+    if($form_state['values']['file']){
+        $file = $form_state['values']['file'];
+        unset($form_state['values']['file']);
+        $file->status = FILE_STATUS_PERMANENT;
+        file_save($file);
+        drupal_set_message(t('The form has been submitted and the image has been saved, filename: @filename.', array('@filename' => $file->filename)));
+    }
+    $from = $mail_user;
+    $body[] = $comentario;
+    $to = $valid_email;
+
+    $params = array(
+        'body' => $body,
+        'subject' => 'Formulario de Denuncia',
+        'file' => $file
+    );
+    drupal_set_message(t('Se envio mensaje, lo recibimos'));
+    drupal_mail('generales', 'reply', $to, language_default(), $params, $from, TRUE);
+}
